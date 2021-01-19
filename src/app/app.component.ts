@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-
+import { IonSearchbar } from '@ionic/angular';
+import { Router } from "@angular/router";
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,4 +8,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'sample-angular-crud';
+  searchBar: IonSearchbar;
+
+  constructor(private router: Router) {}
+  searchUser(value) {
+    console.log();
+    
+    this.router.navigate(['/user-list'], { queryParams: { search: value }});
+  }
 }
