@@ -11,7 +11,7 @@ import { UserService } from "../../services/user/user.service";
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css']
 })
-export class UserListComponent implements OnInit, OnChanges {
+export class UserListComponent implements OnInit {
   userList: User[] = []
   displayedColumns: string[] = ['id', 'name', 'actions'];
   dataSource = new MatTableDataSource<User>();
@@ -28,18 +28,10 @@ export class UserListComponent implements OnInit, OnChanges {
     this.getUsers();
     this.route
       .queryParams
-      .subscribe(params => {
-        // Defaults to 0 if no query param provided.
-        console.log(params);
-        
+      .subscribe(params => {        
         this.searchValue = params['search'];     
         if(this.searchValue) this.searchUsers();   
-        //this.searchValue = +params['page'] || 0;
       });
-  }
-
-  ngOnChanges() {
-    console.log("ngOnChanges");
   }
 
   searchUsers() {

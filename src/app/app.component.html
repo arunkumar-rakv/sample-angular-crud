@@ -1,35 +1,8 @@
-<!-- <ion-header>
-
-<ion-toolbar>
-  <ion-buttons slot="start">
-    <ion-menu-button autoHide="false"></ion-menu-button>
-
-  </ion-buttons>
-  
-  
-  <ion-buttons slot="primary">
-    <ion-button (click)="clickedSearch()">
-      <ion-icon slot="icon-only" name="search"></ion-icon>
-    </ion-button>
-    
-  </ion-buttons>
-  <ion-searchbar placeholder="Search Favorites"></ion-searchbar>
-  <ion-buttons slot="end">
-    <ion-button color="primary" shape="round">
-      <ion-icon slot="start" name="add-outline"></ion-icon>
-      Add
-    </ion-button>
-  </ion-buttons>
-  <ion-title>Left side menu toggle</ion-title>
-</ion-toolbar>
-</ion-header> -->
-
 <div class="mat-app-background basic-container">
   <div class="sample-container">
     <mat-toolbar color="primary" class="sample-header">
         <button mat-icon-button (click)="snav.toggle()"><mat-icon>menu</mat-icon></button>
         <h1 class="sample-app-name">{{title}}</h1>
-        <!-- <ion-searchbar #search placeholder="Search"></ion-searchbar> -->
         <ion-searchbar animated (search)="searchUser($event.target.value)" placeholder="Search User" ></ion-searchbar>
         <a mat-raised-button routerLink="/user-form" color="primary">Add</a>
     </mat-toolbar>

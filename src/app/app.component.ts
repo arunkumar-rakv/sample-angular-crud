@@ -11,9 +11,7 @@ export class AppComponent {
   searchBar: IonSearchbar;
 
   constructor(private router: Router) {}
-  searchUser(value) {
-    console.log();
-    
+  searchUser(value) {    
     this.router.navigate(['/user-list'], { queryParams: { search: value }});
   }
 }
